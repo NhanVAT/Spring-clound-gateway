@@ -1,0 +1,114 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+microservice:
+  serviceHoSoTBi:
+    id: serviceHoSoTBi
+    path: /ServiceHoSoTBi-HoSoTBi-context-root/resources/serviceHoSoTBi/**
+    uri: http://10.0.40.87:7003/
+  serviceHDonDChinh:
+    id: serviceHDonDChinh
+    path: /ServiceHDonDChinh-HDonDChinh-context-root/resources/serviceHDonDChinh/**
+    uri: http://10.0.40.87:7003/
+  serviceInterface:
+    uri: http://10.0.40.87:7003/
+    path: /ServiceInterface-Interface-context-root/resources/serviceInterface/**
+    id: serviceInterface
+  serviceQTHT:
+    uri: http://10.0.40.87:7003/
+    id: serviceQTriHThong
+    path: /ServiceQTriHThong-QTriHThong-context-root/resources/serviceQTriHThong/**
+  sercommon:
+    uri: http://10.0.40.87:7003/
+    path: /ServiceCommon-busCommon-context-root/resources/sercommon/**
+    id: sercommon
+  serviceFileDTu:
+    id: serviceFileDTu
+    uri: http://10.0.40.87:7003/
+    path: /ServiceFileDTu-FileDTu-context-root/resources/serviceFileDTu/**
+  serviceBCaoThang:
+    id: serviceBCaoThang
+    path: /ServiceBCaoThang-BCaoThang-context-root/resources/serviceBCaoThang/**
+    uri: http://10.0.40.87:7003/
+  serviceDMuc:
+    uri: http://10.0.40.87:7003/
+    id: serviceDanhMuc
+    path: /ServiceDanhMuc-DanhMuc-context-root/resources/serviceDanhMuc/**
+  serviceTTienCNo:
+    id: serviceTTienCNo
+    uri: http://10.0.40.87:7003/
+    path: /ServiceTTienCNo-TTienCNo-context-root/resources/serviceTTienCNo/**
+  serviceHopDong:
+    path: /ServiceHopDong-HopDong-context-root/resources/serviceHopDong/**
+    id: serviceHopDong
+    uri: http://10.0.40.87:7003/
+  serviceBDongTThao:
+    id: serviceBDongTThao
+    path: /ServiceBDongTThao-BDongTThao-context-root/resources/serviceBDongTThao/**
+    uri: http://10.0.40.87:7003/
+  serviceReport:
+    uri: http://10.0.40.87:7003/
+    id: serviceReport
+    path: /ServiceReport-Report-context-root/resources/serviceReport/**
+  serviceBCaoLichSu:
+    path: /ServiceBCaoLichSu-BCaoLichSu-context-root/resources/serviceBCaoLichSu/**
+    uri: http://10.0.40.87:7003/
+    id: serviceBCaoLichSu
+  serviceKTraGSatMBD:
+    path: /ServiceKTraGSatMBD-KTraGSatMBD-context-root/resources/serviceKTraGSatMBD/**
+    id: serviceKTraGSatMBD
+    uri: http://10.0.40.87:7003/
+  serviceDichVu:
+    path: /ServiceDichVu-DichVu-context-root/resources/serviceDichVu/**
+    id: serviceDichVu
+    uri: http://10.0.40.87:7003/
+  serviceChiSoKHang:
+    id: serviceChiSoKHang
+    uri: http://10.0.40.87:7003/
+    path: /ServiceChiSoKHang-ChiSoKHang-context-root/resources/serviceChiSoKHang/**
+  serviceHDonPSinh:
+    path: /ServiceHDonPSinh-HDonPSinh-context-root/resources/serviceHDonPSinh/**
+    uri: http://10.0.40.87:7003/
+    id: serviceHDonPSinh
+
+logging:
+  level:
+    reactor:
+      netty: debug
+      ipc:
+        netty: debug
+    org:
+      springframework:
+        http:
+          server:
+            reactive: debug
+        web:
+          reactive: debug
+        cloud:
+          gateway: trace
+
+jwt:
+  publicKey: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAlfArQiQt7HOVsMG0MTGqYG2aOBrWspb+nXYswA9Ft9Bqm2RslDdoz4G8KuE9cJ5ZEd6m2tI1Q1qrkVBao/9MB6+npXwtETt4V72YGB6SvlsHRBn7x2EiY5igje0mT6CiJI//AtcFIxFYv4rn7sFngDtp9N6L+DDq/c8xybsQfphgmo/mUX9pL3ei8SKODjz8wJy+9GjRH0964RpmTEG2D7zyDjit36oU0rN4Ad6UPFe6D9xdeqQDuVDJG9G6zObsPlaiVzLmaVZgYnLRkhM3LXssjwRvO6ZQRJe+r/MHt0L/+KwKzQ7EXfJG2uP+3p61bzgsMt0CxsCo7pKE6k81ywIDAQAB
+  secret: aJSSDS40soqbKPBfuh97WEosi4DTjMGDxlnbXMRVm4o
+
+server:
+  port: 8909
+
+spring:
+  jackson:
+    default-property-inclusion: NON_NULL
+  cloud:
+    gateway:
+      httpclient:
+        connect-timeout: 1000
+        response-timeout: 5000
+      globalcors:
+        add-to-simple-url-handler-mapping: true
+#        cors-configurations:
+#          '[/**]':
+#            allowedOrigins: "*"
+#            allowedHeaders: "*"
+#            allowedMethods: "*"
